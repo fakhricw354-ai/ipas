@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sistem Gerak pada Manusia</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Nunito+Sans:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+<header class="hero">
+  <div>
+    <h1>Sistem Gerak pada Manusia</h1>
+    <p>Tulang, sendi, dan otot bekerja sama sehingga kita dapat berdiri, berjalan, dan beraktivitas. Kenali komponennya, lalu amati tulang belakang dan tiga kelainannya dalam model 3D.</p>
+    <div class="btns"><a class="b f" href="#komponen">Komponen sistem gerak</a><a class="b" href="#tulang-belakang">Model 3D tulang belakang</a></div>
+  </div>
+  <div class="skel">
+    <svg id="skel" viewBox="0 0 220 430" role="img" aria-label="Kerangka manusia dengan titik informasi"></svg>
+    <div id="hsInfo" aria-live="polite"><b>Ketuk titik biru pada kerangka.</b><br>Warna tulang belakang menunjukkan ruas leher, punggung, pinggang, dan tulang kelangkang.</div>
+  </div>
+</header>
+
+<section id="komponen">
+  <h2>Tiga komponen utama</h2>
+  <p class="lead">Tulang adalah alat gerak pasif, otot adalah alat gerak aktif, dan sendi menghubungkan tulang agar dapat bergerak.</p>
+  <div class="cards">
+    <article class="card t1"><h3>Tulang</h3><span class="tag">Alat gerak pasif · 206 tulang dewasa</span>
+      <p>Fungsi: menopang tubuh, melindungi organ, tempat melekat otot, membentuk sel darah di sumsum, dan menyimpan kalsium.</p>
+      <ul><li><b>Pipa:</b> tulang paha, lengan</li><li><b>Pipih:</b> tengkorak, rusuk</li><li><b>Pendek:</b> pergelangan tangan</li><li><b>Tidak beraturan:</b> ruas tulang belakang</li></ul></article>
+    <article class="card t2"><h3>Sendi</h3><span class="tag">Hubungan antartulang</span>
+      <ul><li><b>Sendi mati:</b> tidak dapat digerakkan, contoh tengkorak</li><li><b>Sendi kaku:</b> gerak terbatas, contoh ruas tulang belakang</li><li><b>Sendi gerak:</b> bebas bergerak</li></ul>
+      <p>Jenis sendi gerak: <b>peluru</b> (bahu, panggul), <b>engsel</b> (siku, lutut), <b>putar</b> (leher), dan <b>pelana</b> (ibu jari).</p></article>
+    <article class="card t3"><h3>Otot</h3><span class="tag">Alat gerak aktif</span>
+      <ul><li><b>Otot lurik:</b> menempel pada rangka, bekerja sesuai kehendak</li><li><b>Otot polos:</b> di usus dan pembuluh darah, bekerja di luar kehendak</li><li><b>Otot jantung:</b> hanya di jantung, bekerja di luar kehendak</li></ul>
+      <p>Otot hanya dapat menarik, sehingga bekerja berpasangan (antagonis).</p></article>
+  </div>
+  <div class="arm" id="arm">
+    <div><h3>Kerja otot berpasangan</h3>
+      <p id="armTxt">Lengan lurus: biseps relaksasi dan triseps berkontraksi.</p>
+      <button class="b" id="armBtn" type="button">Tekuk lengan</button></div>
+    <svg viewBox="0 0 240 150" role="img" aria-label="Lengan dengan otot biseps dan triseps">
+      <path d="M30 75H120" class="o"/><path d="M30 75H120" class="i"/>
+      <ellipse class="tri" cx="80" cy="84" rx="38" ry="9" stroke-width="2"/>
+      <ellipse class="bic" cx="80" cy="66" rx="38" ry="9" stroke-width="2"/>
+      <g class="fore"><path d="M120 75H205" class="o"/><path d="M120 75H205" class="i"/><circle cx="212" cy="75" r="7" class="sk"/></g>
+      <circle cx="120" cy="75" r="7" fill="var(--teal)" stroke="#fff" stroke-width="2"/>
+      <text x="80" y="48" text-anchor="middle" font-size="11" fill="var(--ros)" font-weight="700">biseps</text>
+      <text x="80" y="112" text-anchor="middle" font-size="11" fill="var(--sag)" font-weight="700">triseps</text>
+    </svg>
+  </div>
+</section>
+
+<section id="tulang-belakang">
+  <h2>Tulang belakang dan kelainannya</h2>
+  <p class="lead">Tulang belakang tersusun dari 33 ruas: 7 servikal (leher), 12 torakal (punggung), 5 lumbal (pinggang), 5 sakrum (menyatu), dan 4 koksigeus (tulang ekor). Pilih kondisi di bawah, lalu putar modelnya.</p>
+  <div class="tabs" id="tabs" role="tablist"></div>
+  <div class="lab">
+    <div class="vp">
+      <div class="hint">Seret untuk memutar</div>
+      <div id="view3d"></div>
+      <div class="vbar"><button class="vb" data-v="1.5708" type="button">Tampak samping</button><button class="vb" data-v="3.1416" type="button">Tampak belakang</button><button class="vb" data-v="0" type="button">Tampak depan</button></div>
+      <div class="leg"><span><i style="background:#4FB3AE"></i>Servikal</span><span><i style="background:#8E88D6"></i>Torakal</span><span><i style="background:#E0A93F"></i>Lumbal</span><span><i style="background:#D9798E"></i>Sakrum dan koksigeus</span></div>
+    </div>
+    <div class="info" id="info"></div>
+  </div>
+</section>
+
+<section id="tips">
+  <h2>Menjaga tulang belakang</h2>
+  <ul class="tips">
+    <li class="c-teal"><b>Postur tegak</b>Duduk dan berdiri dengan punggung lurus.</li>
+    <li class="c-lav"><b>Tas seimbang</b>Gunakan kedua bahu dan hindari beban terlalu berat.</li>
+    <li class="c-amb"><b>Rutin bergerak</b>Berolahraga dan peregangan menguatkan otot punggung.</li>
+    <li class="c-ros"><b>Nutrisi tulang</b>Cukupi kalsium, vitamin D, dan paparan sinar matahari pagi.</li>
+  </ul>
+  <p class="note">Jika punggung terlihat melengkung tidak wajar atau terasa nyeri berkepanjangan, periksakan ke dokter.</p>
+</section>
+</div>
+<footer>Sistem Gerak pada Manusia · bahan belajar IPA</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
